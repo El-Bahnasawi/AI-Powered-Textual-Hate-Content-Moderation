@@ -1,0 +1,51 @@
+# ─── Python Bytecode & Caches ─────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ─── Virtual Environments & Envs ─────────────────────────────────
+.env                  # Because secrets should never travel in history
+.venv/
+venv/
+env/
+ENV/
+Pipfile.lock
+
+# ─── Jupyter & Notebook Checkpoints ──────────────────────────────
+.ipynb_checkpoints
+
+# ─── IDE & Editor Settings ───────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ─── Operating System Files ──────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── Logs & Diagnostics ──────────────────────────────────────────
+logs/
+*.log
+
+# ─── Model Artifacts & Outputs ───────────────────────────────────
+outputs/
+checkpoints/
+runs/
+wandb/                # W&B experiment logs
+*.h5
+*.pt
+*.ckpt
+
+# ─── Data & Cache ────────────────────────────────────────────────
+data/
+cache/
+transformers_cache/   # Hugging Face model cache
+
+# ─── Docker ─────────────────────────────────────────────────────
+docker-compose.override.yml
+*.tgz
+
+# ─── Miscellaneous ───────────────────────────────────────────────
+*.bak
+*.tmp

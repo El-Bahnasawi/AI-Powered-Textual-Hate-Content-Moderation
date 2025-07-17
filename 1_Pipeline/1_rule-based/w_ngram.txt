@@ -1,0 +1,164 @@
+
+🧾 Text: That party was lit AF 🔥
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: I'm dead 💀💀💀🤣
+🔍 Matched HATE_EMOJI: 💀
+Result: 🔥 Flagged
+
+🧾 Text: He went nuclear on that code review! 💣
+🔍 Matched HATE_EMOJI: 💣
+Result: 🔥 Flagged
+
+🧾 Text: She roasted him in the debate.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: Bruh, you’re such a clown 🤡
+🔍 Matched HATE_EMOJI: 🤡
+Result: 🔥 Flagged
+
+🧾 Text: Kill it in your next exam!
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: Build the wall of inspiration, brick by brick.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: Go back to basics, that’s where the magic is.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: KKK... Keyboard, Keycap, and Keystroke
+🔍 Matched HATE_SHORT_FORMS: {'kkk'}
+Result: 🔥 Flagged
+
+🧾 Text: This food is so good, it’s criminal!
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: You're a beast at coding!
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: Protect your peace and energy.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: We need a clean sweep this quarter 🔫
+🔍 Matched HATE_EMOJI: 🔫
+Result: 🔥 Flagged
+
+🧾 Text: I bombed that test 💣
+🔍 Matched HATE_EMOJI: 💣
+Result: 🔥 Flagged
+
+🧾 Text: Damn, she's killing it on stage!
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: What a beautiful day to go for a walk!
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: Congratulations on your promotion, you earned it!
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: I love seeing diverse voices represented in tech.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: Thanks for the help today — you're awesome!
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: Enjoying a quiet evening with my cat 🐱 and tea ☕
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: Learning new languages is so fulfilling.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: Go back to your country.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: They're nothing but parasites and subhumans.
+🔍 Matched HATE_KEYWORDS: {'subhumans'}
+Result: 🔥 Flagged
+
+🧾 Text: Kill them all, I don't care anymore.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: White power is the only way forward.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: You're such a slut and a whore.
+🔍 Matched SWEAR_WORDS: {'slut', 'whore'}
+Result: 🔥 Flagged
+
+🧾 Text: Build the wall now! Deport all of them!
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: KKK was right about them.
+🔍 Matched HATE_SHORT_FORMS: {'kkk'}
+Result: 🔥 Flagged
+
+🧾 Text: F***ing Muslims ruin everything. 💣
+🔍 Matched HATE_EMOJI: 💣
+Result: 🔥 Flagged
+
+🧾 Text: These invaders should be wiped out.
+🔍 Matched HATE_KEYWORDS: {'invaders'}
+Result: 🔥 Flagged
+
+🧾 Text: Roasties like her should stay silent.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: I’m not racist, but some people just don't belong here.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: They always play the victim and expect handouts.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: She only got the job because of diversity quotas.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: Ever notice how certain neighborhoods feel unsafe?
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: They may look human, but they’re not like us.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: You can’t fix their kind — it’s in their culture.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: We need to protect our bloodlines and traditions.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: Funny how crime goes up when they move in.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: Some cultures are fundamentally incompatible with democracy.
+✅ No match found.
+Result: ✅ Safe
+
+🧾 Text: They act civilized, but you know the truth.
+✅ No match found.
+Result: ✅ Safe

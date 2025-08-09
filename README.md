@@ -2,8 +2,8 @@
 
 [![Streamlit Demo](https://img.shields.io/badge/_Live_Demo-FF4B4B?logo=streamlit&logoColor=white)](https://hate-speech-detection-app.streamlit.app/)
 [![W&B Project](https://img.shields.io/badge/_W%26B_Project-FFBE0B?logo=weightsandbiases&logoColor=black)](https://wandb.ai/medoxz543-zewail-city-of-science-and-technology/Textual%20Hate%20Content%20Moderation%20with%20BERTweet%20%2B%20LoRA?nw=nwusermedoxz543)
-[![Hugging Face Model](https://img.shields.io/badge/_Model-medoxz543/hate--speech-FFD43B?logo=huggingface)](https://huggingface.co/medoxz543/hate-speech)
 [![HF Space](https://img.shields.io/badge/_HF_Space-Live-FFD43B?logo=huggingface)](https://huggingface.co/spaces/medoxz543/hate-endpoint)
+[![Hugging Face Model](https://img.shields.io/badge/_Model-medoxz543/hate--speech-FFD43B?logo=huggingface)](https://huggingface.co/medoxz543/hate-speech)
 [![Dataset: Hatebase](https://img.shields.io/badge/_Dataset-Hatebase-2D96C6?logo=huggingface)](https://huggingface.co/datasets/Machlovi/Hatebase)
 [![Dataset: Superset](https://img.shields.io/badge/_Dataset-English_HS_Superset-7446C2?logo=huggingface)](https://huggingface.co/datasets/manueltonneau/english-hate-speech-superset)
 [![Diagrams by Mermaid](https://img.shields.io/badge/_Diagrams-Mermaid-00957E?logo=mermaid&logoColor=white)](https://mermaid.js.org/)
@@ -111,22 +111,47 @@
 
 ---
 
-## 🛠️ How to Run Locally
-```bash
-# Clone repo
-git clone https://github.com/yourusername/hate-moderation-system.git
-cd hate-moderation-system
+# Project Structure
 
-# Create environment
-conda env create -f environment.yml
-conda activate hate-moderation
+| Path                     | What it is                 | What you’ll find                                                                      | Notes                                                       |
+| ------------------------ | -------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| `1_Pipeline/`            | Model development timeline | Data prep, experiments, and training from “hello world” → final model                 | Great for auditability and reproducing results.             |
+| `2_Software/Frontend/`   | User interfaces            | **Browser Extension** (real-time filtering) & **Streamlit** app (single-text testing) | Streamlit = quick checks. Extension = real-world usage.     |
+| `2_Software/hate_point/` | Deployable backend         | Code for hosting the inference service (e.g., on Hugging Face Spaces)                 | CPU works but is slower; a T4 GPU gives a much snappier UX. |
 
-# Start API (localhost:8000)
-uvicorn app.main:api --reload
+# How to Use
 
-# Launch Streamlit UI (localhost:8501)
-streamlit run app/streamlit_app.py
-```
+1. **Quick test with Streamlit (single statements)**
+
+* Run the Streamlit app and paste any text to see predictions immediately.
+* Ideal when you’re validating behavior or demoing the model without setup overhead.
+
+2. **Browser Extension (real-time on webpages)**
+
+* Load the extension **unpacked**: `chrome://extensions` → enable **Developer mode** → **Load unpacked** → select `2_Software/Frontend/browser-extension/`.
+* Point it at your running backend (local or remote).
+  *Heads-up:* If your backend is a live HF Space on **CPU**, expect noticeable latency; it still works, just… meditatively.
+
+3. **Full experience (GPU T4 on HF Spaces)**
+
+* For sub-second responses, run the backend on a **T4 GPU**:
+
+  * Option A: Fork/pull the HF Space code via the badge link in this README, switch Space **Hardware → T4**, and deploy.
+  * Option B: Use `2_Software/hate_point/` to start your own HF Space from scratch and enable GPU.
+* Then update the **API endpoint** used by the Streamlit app and browser extension to point at your GPU Space.
+
+> Not sure if you actually need the GPU? Start on CPU, measure latency (you’ll *feel* it), then upgrade if the UX matters. Future-you and your users will thank you.
+
+# Notes
+
+* The GPU Space was previously enabled for ultra-fast demos but is paused now to control costs. You can still enjoy the complete experience by deploying the same code on your own HF Space with GPU enabled.
+* Safety first: this is a moderation tool. It’s designed to assist, not to be a legal or policy authority. Use judgment.
+
+# Folder Spotlight: `1_Pipeline/`
+
+* A chronological record of the journey from baseline → final model: preprocessing, experiments, and training scripts/notebooks.
+* Use this folder if you want to reproduce results, inspect decisions, or extend the model with new data/experiments.
+
 ---
 
 ### 🛣️ Future Upgrades

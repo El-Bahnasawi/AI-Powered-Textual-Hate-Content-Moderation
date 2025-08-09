@@ -1,0 +1,13 @@
+{
+  "name": "extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "build": "esbuild src/content.js --bundle --outfile=dist/content.js --minify",
+  "watch": "esbuild src/content.js --bundle --outfile=dist/content.js --minify --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

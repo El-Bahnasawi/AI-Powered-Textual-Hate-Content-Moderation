@@ -30,7 +30,7 @@
 ---
 
 ## 🏗️ System Architecture
-![System Architecture](Images/system_overview_v2.png)
+![System Architecture](Images/system_overview_v3.png)
 
 ---
 

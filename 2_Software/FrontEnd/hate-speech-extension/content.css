@@ -1,0 +1,21 @@
+.ai-blur {
+    filter: blur(4px) !important;
+    transition: filter 0.2s ease-in-out;
+    cursor: help;
+}
+
+#blur-toggle-btn {
+    position: fixed;
+    top: 20px;         /* ⬅️ Moved from bottom */
+    left: 20px;        /* ⬅️ Moved from right */
+    z-index: 9999;
+    padding: 10px 14px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    font-family: sans-serif;
+}

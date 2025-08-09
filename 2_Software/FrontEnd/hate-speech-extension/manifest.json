@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "AI Content Moderator",
+  "version": "2.0",
+  "description": "Advanced AI-powered content moderation for social media platforms",
+  "permissions": ["activeTab"],
+  "host_permissions": ["https://medoxz543-hate-endpoint.hf.space/*"],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.twitter.com/*",
+        "*://*.x.com/*",
+        "*://*.youtube.com/*"
+      ],
+      "js": ["dist/content.js"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ]
+}

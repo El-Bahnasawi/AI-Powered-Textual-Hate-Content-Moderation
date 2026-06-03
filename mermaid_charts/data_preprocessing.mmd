@@ -1,0 +1,45 @@
+flowchart LR
+
+subgraph LocalData["🖥️ Local Development (PC)"]
+
+HB["📄 <b>Hatebase</b><br/>230K"]
+HS["📄 <b>Superset</b><br/>360K"]
+
+M["🧹 <b>Merge & Deduplicate</b><br/>-14.7K dupes"]
+
+C1["🔤 <b>Normalize</b><br/>lowercase<br/>remove emojis/URLs"]
+
+C2["📏 <b>Filter</b><br/>max 60 words<br/>-35K"]
+
+TOK["✂️ <b>BERTweet</b><br/>Tokenization"]
+
+STRAT["📊 <b>Stratified Split</b><br/>67% / 33%"]
+
+TRAIN["🧪 <b>Train</b><br/>490K"]
+VAL["📈 <b>Val</b><br/>30K"]
+TEST["🧪 <b>Test</b><br/>10K"]
+
+ZIP["🗜️ <b>upload_ready.zip</b>"]
+
+HB --> M
+HS --> M
+
+M --> C1 --> C2 --> TOK --> STRAT
+
+STRAT --> TRAIN
+STRAT --> VAL
+STRAT --> TEST
+
+TRAIN --> ZIP
+VAL --> ZIP
+TEST --> ZIP
+
+end
+
+classDef process fill:#E3F2FD,stroke:#1565C0,stroke-width:2px;
+classDef dataset fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px;
+classDef output fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px;
+
+class M,C1,C2,TOK,STRAT process;
+class HB,HS dataset;
+class TRAIN,VAL,TEST,ZIP output;

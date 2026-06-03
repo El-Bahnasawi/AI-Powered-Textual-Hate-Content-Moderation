@@ -1,0 +1,47 @@
+flowchart TB
+
+subgraph Clients["📱 User-Facing Apps"]
+    direction LR
+    Browser["🔌 Browser Extension<br/>Real-time"]
+    ExtDemo["🌐 Streamlit Demo<br/>Web UI"]
+end
+
+subgraph HF["⚙️ HF Spaces (T4 GPU)"]
+    direction TB
+
+    B["⚙️ Regex Rules<br/><b>Deterministic Filter</b>"]
+
+    C["🤖 LoRA-tuned<br/><b>BERTweet</b>"]
+
+    D[("🗄️ Supabase<br/><b>Feedback DB</b>")]
+
+    R["📊 Decision Engine<br/><br/>🟢 &lt; 0.40 → Allow<br/>🟠 0.40-0.99 → Block (BERTweet)<br/>🔴 1.00 → Block (Regex)"]
+
+    API["🚀 FastAPI Service"]
+end
+
+Clients -- "HTTPS POST<br/>Raw Text" --> B
+
+B -- "score = 1.0" --> R
+B -- "pass" --> C
+
+C -- "score ∈ [0,1]" --> R
+
+C --> D
+D -. "🔁 Active Learning" .-> C
+
+R -- "score + decision" --> Clients
+
+classDef client fill:#E3F2FD,stroke:#1565C0,stroke-width:2px,color:#0D47A1;
+classDef rule fill:#FFF3E0,stroke:#EF6C00,stroke-width:2px;
+classDef model fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px;
+classDef db fill:#F3E5F5,stroke:#6A1B9A,stroke-width:2px;
+classDef score fill:#FFEBEE,stroke:#C62828,stroke-width:2px;
+classDef api fill:#E0F7FA,stroke:#006064,stroke-width:2px;
+
+class Browser,ExtDemo client;
+class B rule;
+class C model;
+class D db;
+class R score;
+class API api;

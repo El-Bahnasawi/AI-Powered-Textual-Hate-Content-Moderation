@@ -30,12 +30,24 @@
 ---
 
 ## 🏗️ System Architecture
-![System Architecture](Images/system_overview.png)
+<img src="Images/system_overview.svg" alt="System Architecture" style="max-height: 500px; width: auto;">
+
+---
+
+## ⚡ Smart Decision Logic
+
+| Hate Score | Action | Blocked By | UI |
+|------------|--------|------------|----|
+| < 0.40 | ✅ Allow | – | 🟢 |
+| 0.40 – 0.99 | 🚫 Block | **Fine‑tuned BERTweet** | 🟠 |
+| = 1.00 | 🚫 Block | **Regex Rules** | 🔴 |
+
+**Key Insight**: Regex handles obvious cases instantly, BERTweet catches nuanced hate speech!
 
 ---
 
 ## 📊 Data Pipeline
-![Data Preprocessing](Images/data_preprocessing.png)
+<img src="Images/data_preprocessing.svg" alt="Data Preprocessing Pipeline" style="max-height: 500px; width: auto;">
 
 ---
 

@@ -30,7 +30,7 @@
 ---
 
 ## 🏗️ System Architecture
-<img src="Images/system_overview.svg" alt="System Architecture" style="max-height: 500px; width: auto;">
+<img src="Images/system_overview.svg" alt="System Architecture" style="max-height: 300px; width: auto;">
 
 ---
 
@@ -47,7 +47,7 @@
 ---
 
 ## 📊 Data Pipeline
-<img src="Images/data_preprocessing.svg" alt="Data Preprocessing Pipeline" style="max-height: 500px; width: auto;">
+<img src="Images/data_preprocessing.svg" alt="Data Preprocessing Pipeline" style="max-height: 300px; width: auto;">
 
 ---
 
